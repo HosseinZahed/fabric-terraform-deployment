@@ -5,8 +5,12 @@ terraform {
       version = "~>3.0"
     }
   }
-
-  backend "azurerm" {}  # (Optional) For remote state management
+  backend "azurerm" {
+    resource_group_name  = "terraform-rg"
+    storage_account_name = "stterraformfabricpoc "
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
