@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {    
     resource_group_name  = "rg-temp"
-    storage_account_name = "stterraformfabricpoc "
+    storage_account_name = "stterraformfabricpoc"
     container_name       = "tfstate"
     key                  = "terraform.tfstate" 
   }
