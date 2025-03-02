@@ -1,9 +1,14 @@
 terraform {
   required_providers {
+    required_version = ">= 1.8, < 2.0"
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "~>3.0"
-    }
+    } 
+    fabric = {
+      source  = "microsoft/fabric"
+      version = "0.1.0-beta.10"
+    }  
   }
   backend "azurerm" {    
     resource_group_name  = "rg-temp"
@@ -15,4 +20,8 @@ terraform {
 
 provider "azurerm" {
   features {}
+}
+
+provider "fabric" {
+  # Configuration options
 }
