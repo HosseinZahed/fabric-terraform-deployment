@@ -3,16 +3,10 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 }
 
-resource "azapi_resource" "fabric_workspace" {
-  type      = "Microsoft.PowerBI/workspaces@2023-02-01"
-  name      = var.fabric_workspace_name
-  location  = var.location
-  parent_id = "/subscriptions/${var.subscription_id}/resourceGroups/${azurerm_resource_group.rg.name}"
-
-  body = jsonencode({
-    properties = {
-      description = "Terraform-created Microsoft Fabric Workspace"
-      type        = "Workspace"
-    }
-  })
+# Simple Workspace
+resource "fabric_workspace" "fabric_ws" {
+  display_name = var.fabric_workspace_name
+  resource_group_name = azurerm_resource_group.rg.name
+  location     = var.location
+  description  = "Example Workspace 1"  
 }

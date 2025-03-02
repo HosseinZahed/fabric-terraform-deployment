@@ -1,3 +1,3 @@
 output "fabric_workspace_id" {
-  value = azapi_resource.fabric_workspace.id
+  value = fabric_workspace.fabric_workspace.id
 }
