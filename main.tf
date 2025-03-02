@@ -6,6 +6,5 @@ resource "azurerm_resource_group" "rg" {
 # Simple Workspace
 resource "fabric_workspace" "fabric_ws" {
   display_name = var.fabric_workspace_name
-  location     = var.location
   description  = "Example Workspace 1"  
 }
